@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="col-12 d-flex justify-content-between">
+    <div class="col-4">
+        <form id="uploadForm" method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Index">
+            <div class="mb-3">
+                <label for="countryName" class="form-label">Country Name</label>
+                <input type="text" id="countryName" name="countryName" class="form-control" />
+            </div>
+            
+            <div class="mb-3">
+                <label for="Year" class="form-label">Year</label>
+                <input type="number" id="Year" name="Year" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label for="file" class="form-label">Image</label>
+                <input type="file" id="file" name="file" class="form-control" />
+            </div>
+            <div>
+                <input type="submit" value="Upload File" class="btn btn-primary" />
+            </div>
+            <span class="text-success">
+                @ViewBag.Message
+            </span>
+        </form>
+    </div>
+
+    <div class="col-6 text-center">
+        
+        @if (ViewBag.ProcessedImage != null)
+        {
+            <img src="@Url.Content($"~/uploads/{ViewBag.ProcessedImage}")" alt="Processed Image" class="img-fluid" />
+            <br />
+            @if (ViewBag.carCount > 0)
+            {
+                <h2 style="color:blue;">@ViewBag.carCount Traffic Light(s) detected</h2>
+            }
+            else
+            {
+                <h2 style="color:red;">No Traffic Light detected</h2>
+            }
+        }
+        
+        
+    </div>
+</div>
+
+<script>
+    document.getElementById('uploadForm').addEventListener('submit', function(event) {
+        let isValid = true;
+        let inputs = this.querySelectorAll('input[type="text"], input[type="number"], input[type="file"]');
+
+        inputs.forEach(function(input) {
+            if (input.value.trim() === '') {
+                isValid = false;
+            }
+        });
+
+        if (!isValid) {
+            event.preventDefault();
+            alert('Please fill in all the fields before submitting the form.');
+        }
+    });
+</script>

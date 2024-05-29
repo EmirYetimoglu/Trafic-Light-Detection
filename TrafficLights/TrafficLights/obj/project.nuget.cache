@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "T58q9/gLZOARI49ZW7tDV0M7L+R3N5dvx845beA1Nw09m1i1cW+65d73ClFd9axH9ANFg5DK498dYbUDc6i3IQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\20051350008\\source\\repos\\TrafficLights\\TrafficLights\\TrafficLights.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\20051350008\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\20051350008\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\20051350008\\.nuget\\packages\\system.drawing.common\\8.0.6\\system.drawing.common.8.0.6.nupkg.sha512"
+  ],
+  "logs": []
+}
